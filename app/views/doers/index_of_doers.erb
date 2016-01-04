@@ -2,8 +2,17 @@
 <% Doer.all.each do |doer| %>
   <h4><%= "#{doer.name}'s Tasks:"%></h4>
   <ol>
-    <% doer.tasks.each.with_index(1) do |task, i| %>
-    <li> <%="#{i}. #{task.title}" %> </li>
+    <% doer.tasks.each do |task| %>
+    <li> <%="#{task.title}" %> </li>
+    <a href="/tasks/<%="#{task.id}"%>/delete"><button type="button" style="display:inline;" >Delete this task</button></a>
+    <a href="/tasks/<%="#{task.id}"%>/complete"><button type="button" style="display:inline;" >Mark Complete!</button></a>
+
     <% end %>
   </ol>
+  <a href="/doers/<%="#{doer.id}"%>/delete"><button type="button" style="display:inline;">Delete <%=doer.name%></button></a>
 <% end %>
+
+<hr>
+<a href="/doers/new"><button type="button" style="display:inline;" name="create doer">New Doer</button></a>
+<a href="/tasks/new"><button type="button" style="display:inline;" name="create task">New Task</button></a>
+<hr>

@@ -1,5 +1,5 @@
 require_relative '../../config/environment'
-
+require 'pry'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -34,7 +34,8 @@ class ApplicationController < Sinatra::Base
 
   post '/tasks' do
     binding.pry
-    @task = Task.create(title: params[:titles], details: params[:details], doer: Doer.find_or_create_by(name: params[:doer_name])
+    @task = Task.create(title: params[:title], details: params[:details], completed?: false, doer_id: Doer.find_or_create_by(name: params[:doer_name]).id)
+    binding.pry
     redirect to '/tasks'
   end
 
