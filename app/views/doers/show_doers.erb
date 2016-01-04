@@ -1,0 +1,11 @@
+
+<h4><%= "#{@doer.name}'s Tasks:"%></h4>
+<ol>
+
+  <% doer.tasks.each.with_index(1) do |task, i| %>
+
+  <li> <%="#{i}. #{task.title}" %> </li>
+  <p>  Task Status: <%= task.completed? ? "Completed" : "Incomplete"  %></p>
+  <p>  <%="#{task.details}"%></p>
+</ol>
+  <% end %>

@@ -1,0 +1,9 @@
+
+<% Doer.all.each do |doer| %>
+  <h4><%= "#{doer.name}'s Tasks:"%></h4>
+  <ol>
+    <% doer.tasks.each.with_index(1) do |task, i| %>
+    <li> <%="#{i}. #{task.title}" %> </li>
+  </ol>
+    <% end %>
+<% end %>
