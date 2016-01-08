@@ -10,39 +10,36 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :index
   end
+  #
+  # get '/doers' do
+  # #   erb :"doers/index"
+  # # end
+  #
+  # get '/tasks' do
+  #   erb :"tasks/index"
+  # end
+  #
+  # # get '/doers/new' do
+  # #   erb :"doers/new" #posts to /doers
+  # # end
+  #
+  # get '/tasks/new' do
+  #   erb :"tasks/new" #posts to /tasks
+  # end
+  #
+  # # post '/doers' do
+  # #   Doer.create(name: params[:name])
+  # #   redirect to '/'
+  # # end
+  #
+  # post '/tasks' do
+  #   binding.pry
+  #   @task = Task.create(title: params[:title], details: params[:details], completed?: false, doer_id: Doer.find_or_create_by(name: params[:doer_name]).id)
+  #   binding.pry
+  #   redirect to '/tasks'
+  # end
 
-  get '/doers' do
-    erb :"doers/index_of_doers"
-  end
 
-  get '/tasks' do
-    erb :"doers/index_of_doers"
-  end
-
-  get '/doers/new' do
-    erb :"doers/create_doers" #posts to /doers
-  end
-
-  get '/tasks/new' do
-    erb :"tasks/create_tasks" #posts to /tasks
-  end
-
-  post '/doers' do
-    Doer.create(name: params[:name])
-    redirect to '/doers'
-  end
-
-  post '/tasks' do
-    binding.pry
-    @task = Task.create(title: params[:title], details: params[:details], completed?: false, doer_id: Doer.find_or_create_by(name: params[:doer_name]).id)
-    binding.pry
-    redirect to '/tasks'
-  end
-
-  get '/doers/:id' do
-    @doer = Doer.all.find {|doer| doer.id == params["id"].to_i}
-    erb :show_doers.erb
-  end
 
   # post '/doers/edited' do
   #   @editable_post = Post.all.find {|post| post.id == params["id"].to_i}

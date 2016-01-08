@@ -1,0 +1,6 @@
+<h3>damn... there's a lot to do</h3>
+<ol>
+<% Task.all.each do |task| %>
+  <a href="/tasks/<%=task.slug%>"><li><%= "#{task.title}"%></li></a>
+    <% end %>
+  </ol>

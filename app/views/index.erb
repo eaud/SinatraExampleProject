@@ -1,1 +1,13 @@
-<h2>We're gonna do some tasks</h2>
+<% Doer.all.each do |doer| %>
+  <a href="/doers/<%=doer.slug%>"><h4><%= "#{doer.name}'s Tasks:"%></h4></a>
+  <ol>
+    <% doer.tasks.each do |task| %>
+    <a href="/tasks/<%=task.slug%>"><li> <%="#{task.title}" %> </li></a>
+    <a href="/tasks/<%=task.id%>">
+      <!-- <button type="button" style="display:inline;width:40px;" >Delete this task</button></a> -->
+    <!-- <a href="/tasks/<%="#{task.id}"%>/complete"><button type="button" style="display:inline;width:40px;" >Mark Complete!</button></a> -->
+
+    <% end %>
+  </ol>
+  <!-- <a href="/doers/<%="#{doer.id}"%>/delete"><button type="button" style="display:inline;">Delete <%=doer.name%></button></a> -->
+<% end %>

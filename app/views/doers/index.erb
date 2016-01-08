@@ -1,0 +1,5 @@
+<h3>The Trusty Team:</h3>
+<% Doer.all.each do |doer| %>
+  <a href="/doers/<%=doer.slug%>"><h4><%= "#{doer.name}"%></h4></a>
+
+<% end %>

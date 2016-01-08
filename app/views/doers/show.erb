@@ -1,0 +1,16 @@
+
+<h3><%= "#{@doer.name}'s Tasks:"%></h3>
+<ol>
+  <% @doer.tasks.each do |task| %>
+  <a href="/tasks/<%=task.slug%>"><li> <%="#{task.title}" %> </li></a>
+  <ul>
+    <li>  Task Status: <span style="<%= task.completed? ? "color:green;" : "color:red;"%>"><%= task.completed? ? "Complete! :)" : "Incomplete :("  %></span></li>
+    <li>  Task Details: <%="#{task.details}"%></li>
+  </ul>
+    <% end %>
+</ol>
+
+<form action="/doers/<%=@doer.slug%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete <%=@doer.name%>">
+</form>

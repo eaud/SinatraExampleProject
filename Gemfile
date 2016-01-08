@@ -9,6 +9,8 @@ gem 'sinatra', require: "sinatra/base"
 gem 'sinatra-activerecord'
 gem 'thin'
 gem 'require_all'
+gem 'slugify', '~> 1.0', '>= 1.0.6'
+gem 'faker'
 
 group :development do
     gem 'shotgun'

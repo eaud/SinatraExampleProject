@@ -1,0 +1,7 @@
+<form  action="/tasks/<%= @task.slug %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="" name="doer[name]" value="">
+  <input type="text" name="task[title]" value="<%= @task.title %>">
+  <input type="text" name="task[details]" value="<%= @task.details %>">
+  <input type="submit" value="Submit">
+</form>

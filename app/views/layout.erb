@@ -8,5 +8,13 @@
     <h1>Let's Do These Tasks</h1>
       <%= yield%>
 
+      <hr>
+      <a href="/"><button type="button" style="display:inline;">Existing Tasks & Doers</button></a>
+      <a href="/doers"><button type="button" style="display:inline;">Just the Doers</button></a>
+      <a href="/tasks"><button type="button" style="display:inline;">Just the Tasks</button></a>
+      <hr>
+      <a href="/doers/new"><button type="button" style="display:inline;" name="create doer">New Doer</button></a>
+      <a href="/tasks/new"><button type="button" style="display:inline;" name="create task">New Task</button></a>
+      <hr>
   </body>
 </html>

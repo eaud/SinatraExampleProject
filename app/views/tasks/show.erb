@@ -1,0 +1,14 @@
+<h4>TO DO: <%= @task.title %></h4>
+<h5>Completion Status: <span style="<%= @task.completed? ? "color:green;" : "color:red;"%>"><%= @task.completed? ? "Complete! :)" : "Incomplete :("  %></span> </h5>
+<form action="/tasks/<%= @task.slug %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <h5>Have you actually completed this task?<input type="submit" name="task[completed?]" value="true" text="MarkComplete"></h5>
+</form>
+<h5>Person Responsible: <a href="/doers/<%=@doer.slug%>"><%=@doer.name %></a></h5>
+<h5>Task Details:</h5>
+<p><%= @task.details %></p>
+
+<form action="/tasks/<%=@task.slug%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this task">
+</form>
